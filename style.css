@@ -1,0 +1,255 @@
+/*
+  This stylesheet controls the page layout, colours, and spacing.
+  Change text colours and spacing values here to update the overall look.
+*/
+
+:root {
+  --cream: #f7f3ea;
+  --sky: #dfeef8;
+  --blue-deep: #1f4d73;
+  --blue-mid: #4a7ca8;
+  --blue-soft: #a9cce3;
+  --text: #1f2d3d;
+  --muted: #51637a;
+  --white: #ffffff;
+  --border: #cfe0ec;
+  --shadow: rgba(28, 60, 90, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--cream) 0%, #eef7fb 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--blue-deep);
+}
+
+/* Keep link focus easy to see for keyboard users. */
+a:focus-visible {
+  outline: 3px solid var(--blue-mid);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(247, 243, 234, 0.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(3px);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero {
+  padding: 4rem 0 3rem;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 2.5rem 0;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: var(--blue-deep);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: var(--blue-deep);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 60ch;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.primary {
+  background: var(--blue-deep);
+  color: var(--white);
+  box-shadow: 0 10px 20px var(--shadow);
+}
+
+.secondary {
+  background: var(--white);
+  color: var(--blue-deep);
+  border: 1px solid var(--border);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: rgba(169, 204, 227, 0.22);
+}
+
+.section-heading {
+  margin-bottom: 1.25rem;
+}
+
+.section-note {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  color: var(--blue-mid);
+}
+
+.about-copy {
+  max-width: 70ch;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.skill-list li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+.contact-section {
+  padding-bottom: 5rem;
+}
+
+.contact-box {
+  background: rgba(223, 238, 248, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.contact-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+/*
+  Adjust the media query below if you want to change how the layout behaves on phones.
+*/
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 1.5rem;
+  }
+}
